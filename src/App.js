@@ -6,10 +6,12 @@ import './App.css';
 const Button = styled.button`
   border: 1px solid blue;
 `;
+const buttonElement = <Button>Hello</Button>;
 
 console.log(styled);
 console.log(styled.button);
 console.log(Button);
+console.log(buttonElement);
 
 class App extends Component {
   render() {
@@ -22,7 +24,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Button>Hello</Button>
+        {buttonElement}
       </div>
     );
   }
