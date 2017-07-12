@@ -7,6 +7,10 @@ const Button = styled.button`
   border: 1px solid blue;
 `;
 
+console.log(styled);
+console.log(styled.button);
+console.log(Button);
+
 class App extends Component {
   render() {
     return (
