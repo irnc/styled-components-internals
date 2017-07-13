@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import logo from './logo.svg';
 import './App.css';
 
@@ -12,6 +12,10 @@ console.log(styled);
 console.log(styled.button);
 console.log(Button);
 console.log(buttonElement);
+console.log(css`
+  color: orange;
+  background-color: ${props => props.primary ? 'black' : 'green' }
+`);
 
 class App extends Component {
   render() {
