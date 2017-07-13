@@ -1,0 +1,37 @@
+# http://www.webgraphviz.com/
+
+digraph runtime {
+  createStyledComponent [label="createStyledComponent (aka styledComponent, componentConstructor)"];
+  "createStyledComponent" -> "styled"
+  "constructWithOptions" -> "styled"
+  "css" -> "constructWithOptions"
+  "ComponentStyle" -> "createStyledComponent"
+  "constructWithOptions" -> "createStyledComponent"
+}
+
+digraph source {
+  styled [shape=box];
+  css [shape=box];
+  keyframes [shape=box];
+  injectGlobal [shape=box];
+
+  "createStyledComponent" -> "styled"
+  "constructWithOptions" -> "styled"
+  "css" -> "constructWithOptions"
+  "ComponentStyle" -> "createStyledComponent"
+  "constructWithOptions" -> "createStyledComponent"
+  "NameGenerator" -> "ComponentStyle"
+  "Flattener" -> "ComponentStyle"
+  "Stringifier" -> "ComponentStyle"
+
+  "NameGenerator" -> "keyframes"
+  "Stringifier" -> "keyframes"
+  "css" -> "keyframes"
+
+  "Stringifier" -> "injectGlobal"
+  "css" -> "injectGlobal"
+
+# implementation
+  "generateAlphabeticName" -> "NameGenerator"
+  "stringifyRules" -> "Stringifier"
+}
