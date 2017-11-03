@@ -3,7 +3,12 @@ import styled, { css } from 'styled-components';
 import logo from './logo.svg';
 import './App.css';
 
-const Button = styled.button`
+const Button = styled.button.withConfig({
+  displayName: 'Button',
+  rules: css`
+    color: red;
+  `,
+})`
   border: 1px solid blue;
 `;
 const buttonElement = <Button>Hello</Button>;
